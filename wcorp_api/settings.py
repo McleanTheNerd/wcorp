@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # custom apps
-    "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
+    # "whitenoise.runserver_nostatic",
+    # "django.contrib.staticfiles",
     'api',
     'rest_framework'
 ]
@@ -134,10 +134,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-import os
+# import os
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'statifiles','static')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATIC_ROOT = os.path.join(BASE_DIR,'statifiles','static')
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
