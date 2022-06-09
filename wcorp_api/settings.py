@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ezc1i2nb!ba=z$)i2b4nxp@wdf#ajl4^ioj_@!e_5lm&6kw@zh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://winklecorp.herokuapp.com/']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # custom apps
+    "whitenoise.runserver_nostatic",
+    "django.contrib.staticfiles",
     'api',
     'rest_framework'
 ]
@@ -56,6 +58,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -131,7 +134,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'statifiles','static')
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
